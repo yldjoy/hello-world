@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>input输入框h5</title>
+</head>
+<body>
+<script>
+    function check() {
+        var url = document.getElementById('url');
+        if(url.value==""){
+            alert("请输入url");
+            return false;
+        }else if(!url.checkValidity()){
+            alert("请输入正确的url");
+            return false;
+        }
+    }
+    function rangeValue(){
+        var per = document.getElementById("range").value;
+        document.getElementById("output").value = per;
+    }
+</script>
+<form action="#" onsubmit="return check()" novalidate="true">
+    <input id="url" type="url" name="url" value="www.baidu.com">
+    <input type="email" name="email" value="99@qq.com">
+    <input type="date" name="date" value="2015-09-10">
+    <input type="time" name="time">
+    <input type="datetime" name="datetime">
+    <input type="month" name="month">
+    <input type="week" name="week">
+    <input id="range" type="range" name="range" min="10" max="100" step="5" value="30"
+           onchange="document.getElementById('output').value = this.value;">
+    <input id="output" value="30">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
