@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Canvas实现的2048棋盘</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="800" style="border: 1px solid black;margin: 0 auto;">你的浏览器不支持canvas</canvas>
+    <script>
+        window.onload = function(){
+            var cvs = document.getElementById("canvas");
+            var context = cvs.getContext("2d");
+            fillRectRound(context,500,400,450,450,10,"#8B7355");
+            for(var i = 0; i < 4; i++){
+                for(var j = 0; j < 4; j++){
+                    fillRectRound(context, 60+110*j+275 ,60+110*i+175, 100, 100, 5, "#969696");
+                }
+            }
+        }
+        function strokeRectRound(context, x, y, width, height, radius, strokeWidth, strokeColor){
+            context.save();
+            context.stokeWidth = strokeWidth || 5;
+            context.strokeStyle = strokeColor || "blue";
+            context.translate(x,y);
+            drawRectRound(context, width, height, radius);
+            context.stroke();
+            context.restore();
+        }
+        function fillRectRound(context, x, y, width, height, radius, fillColor){
+            context.save();
+            context.fillStyle = fillColor || "yellow";
+            context.translate(x, y);
+            drawRectRound(context, width, height, radius);
+            context.fill();
+            context.restore();
+        }
+        function drawRectRound(context, width, height, radius){
+            context.beginPath();
+            context.arc(width/2 - radius, height/2 - radius, radius, 0, 0.5*Math.PI);
+            context.lineTo(-width/2 + radius, height/2);
+            context.arc(-width/2 + radius, height/2-radius, radius, 0.5*Math.PI, Math.PI);
+            context.lineTo(-width/2, -height/2 + radius);
+            context.arc(-width/2 + radius, -height/2 + radius, radius, Math.PI, 1.5*Math.PI);
+            context.lineTo(width/2 -radius, -height/2);
+            context.arc(width/2 - radius, -height/2+radius, radius, 1.5*Math.PI, 2*Math.PI);
+            context.closePath()
+        }
+    </script>
+</body>
+</html>
