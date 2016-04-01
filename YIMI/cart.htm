@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>购物车</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!---------------新加的样式表------------>
+    <link type="text/css" rel="stylesheet" href="common/css/styles.css">
+</head>
+<body>
+<div class="g_wrap">
+    <!----------------------头部搜索---------------------------->
+    <header class="header_wrapper clearfix">
+		<form action="yimi" method="post">
+			<div class="fl head_l"><img src="%E4%B8%80%E7%B1%B3%E5%B8%82%E9%9B%86_files/login_yimi_return.htm" onclick="back()" ></div>
+			<div class="h_text fl">购物车</div>
+			<div class="fr head_c">
+				<a href="http://3.mytestforfujitsu.sinaapp.com/shop_show/quick_jump.jsp"><img src="%E4%B8%80%E7%B1%B3%E5%B8%82%E9%9B%86_files/login_yimi_menu.htm" ></a>
+			</div>
+		</form>
+    </header>
+    <div style="height: 50px; clear: both; display: block"></div>
+    <!----------------------头部搜索 end ---------------------------->
+
+    <!----------------------购物车列表---------------------------->
+    <div class="shopping_cart" id="cart-load">
+		<form action="" id="cart-form" method="post">
+			<div class="cart_form">
+				<ul>
+					<li>
+						<div class="cart_main clearfix">
+							<div class="cart_product_pic">
+								<a href="detail.htm" title="" class="product_image"><img src="images/jyhdhbd.png"  alt=""></a>
+							</div>
+							<div class="cart_product_info">
+								<div class="product_name"><a href="detail.htm">蒋永辉的红扁豆</a></div>
+								<div class="cart_price">
+									<span class="price">¥8.00</span>   
+									<span>三分地农场</span> 
+									<span>300g/份</span> 
+								</div>
+								<div class="quantity-box clearfix">
+									<div class="cart-quantity-decrease"></div>
+									<div><input name="" value="1" size="4" title="数量" class="input-text" maxlength="12"></div>
+									<div class="cart-quantity-increase"></div>
+								</div>
+								<a href="#" title="删除项目" class="btn-remove"></a>    
+							</div>    
+						</div>
+					</li>
+					<li>
+						<div class="cart_main clearfix">
+							<div class="cart_product_pic">
+								<a href="detail.htm" title="" class="product_image"><img src="images/cjldmj.png"  alt=""></a>
+							</div>
+							<div class="cart_product_info">
+								<div class="product_name"><a href="detail.htm">楚家林的蜜桔</a></div>
+								<div class="cart_price">
+									<span class="price">¥12.00</span>   
+									<span>趣玩吧农场</span> 
+									<span>300g/份</span> 
+								</div>
+								<div class="quantity-box clearfix">
+									<div class="cart-quantity-decrease"></div>
+									<div><input name="" value="1" size="4" title="数量" class="input-text" maxlength="12"></div>
+									<div class="cart-quantity-increase"></div>
+								</div>
+								<a href="#" title="删除项目" class="btn-remove"></a>    
+							</div>    
+						</div>
+					</li>
+				</ul>
+			</div>
+        </form>
+    </div>
+	<!----------------------购物车列表 end---------------------------->
+	<!---------------------结算---------------------------->
+	<div style="height:44px; clear: both;"></div>
+    <div class="cart_collaterals">
+		<div class="b">总计¥
+			<span class="red">25.8</span>　
+			<span class="c">共1件商品</span>
+		</div>
+		<div>商品满150免运费</div>
+        <div class="button">
+			<a href="#">去结算</a>
+		</div>
+	</div>
+</div>	
+
+</body>
+<script type="text/javascript">
+function back(){
+    history.go(-1); //后退1页  
+}
+</script>
+</html>
