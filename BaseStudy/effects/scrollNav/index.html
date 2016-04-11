@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>网页定位导航</title>
+    <style>
+        *{margin:0;padding: 0}
+        body{font-size: 12px;}
+        a, a:hover{text-decoration: none;color: black}
+        li{list-style: none}
+        /*右侧导航*/
+        #menu{position: fixed;top:100px;left:50%;margin-left: 400px;} /**/
+        #menu li {padding: 10px;margin: 5px;}
+        #menu li.foucus {background-color: #2b669a}
+        /*左侧内容区*/
+        #content{width: 800px;margin: 50px auto}
+        #content .item{border: 1px dashed blue;padding: 10px;margin-bottom: 20px;}
+        .item h2 {border-bottom: 2px solid #0088BB;margin-bottom: 10px;}
+        .item ul img {width: 230px;height: 230px;float:left;margin-right: 10px;margin-bottom: 5px;}
+        .item ul:after{content: "";display: block;height: 0;clear: both;visibility: hidden}
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li class="foucus"><a href="#item1">1F 男装</a></li>
+        <li><a href="#item2">2F 女装</a></li>
+        <li><a href="#item3">3F 美妆</a></li>
+        <li><a href="#item4">4F 数码</a></li>
+        <li><a href="#item5">5F 母婴</a></li>
+    </ul>
+</div>
+<div id="content">
+    <h1>地狗购物网</h1>
+    <div id="item1" class="item">
+        <h2>1F 男装</h2>
+        <ul>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+            <li><a href="#"><img src="1F.jpg" alt="1F"/></a></li>
+        </ul>
+    </div>
+    <div id="item2" class="item">
+        <h2>2F 女装</h2>
+        <ul>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+            <li><a href="#"><img src="2F.jpg" alt="2F"/></a></li>
+        </ul>
+    </div>
+    <div id="item3" class="item">
+        <h2>3F 美妆</h2>
+        <ul>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+            <li><a href="#"><img src="3F.jpg" alt="3F"/></a></li>
+        </ul>
+    </div>
+    <div id="item4" class="item">
+        <h2>4F 数码</h2>
+        <ul>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+            <li><a href="#"><img src="4F.png" alt="4F"/></a></li>
+        </ul>
+    </div>
+    <div id="item5" class="item">
+        <h2>5F 母婴</h2>
+        <ul>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+            <li><a href="#"><img src="5F.jpg" alt="5F"/></a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    window.onscroll = function(){
+        var top = document.body.scrollTop;
+        var itemList = getByClassName(document.getElementById("content"), "item");
+        var menuLi = document.getElementById("menu").getElementsByTagName("li");
+        var n = -1;
+        for(var i = 0,len = itemList.length; i < len ; i++){
+            console.log(itemList[i].offsetTop);
+            if( n == -1 && itemList[i].offsetTop > top){
+                menuLi[i].setAttribute("class","foucus");
+                n = 0;
+            }else {
+                menuLi[i].setAttribute("class","")
+            }
+        }
+        if(n == -1){
+            menuLi[menuLi.length-1].setAttribute("class","foucus");
+        }
+    }
+
+    function getByClassName(cnt, className){
+        var child = cnt.getElementsByTagName("*");
+        var result = [];
+        for(var i =0; i<child.length; i++){
+            if (child[i].className.indexOf(className) != -1){
+                result.push(child[i]);
+            }
+        }
+        return result;
+    }
+</script>
+</body>
+</html>
