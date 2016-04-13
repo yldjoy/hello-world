@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        * {padding: 0;margin: 0}
+        body{width: 960px;margin: 0 auto;padding-bottom: 50px;}
+        .clearfix:after {content: " ";display: block; height: 0;clear: both;visibility: hidden}
+        .fl{float: left}
+        .fr{float: right}
+        /*百分比宽度*/
+        .col-1 {box-sizing:border-box;display: inline-block;width: 10%;}
+        .col-2 {box-sizing:border-box;display: inline-block;width: 20%;}
+        .col-3 {box-sizing:border-box;display: inline-block;width: 30%;}
+        /*表格样式*/
+        #cart-content {border-top: 3px solid #A7CBFF; text-align: center}
+        #cart-header {background-color:#E2F2FF;font-size: 18px;}
+        #cart-content li{border-bottom: 1px solid #A7CBFF; border-left: 1px solid #A7CBFF;
+                      list-style: none;float: left;}
+        #cart-content li.last-li {border-right: 1px solid #A7CBFF;}
+        .item:hover {background-color: #EEF6FF}
+        .item li{height: 120px;line-height: 120px;}
+        .item-img {width: 100px;height: 100px;display: inline-block;float: left;margin:0 10px;}
+        .item-name {font-size: 16px;line-height: 16px;padding-top:30px;}
+        .num-input {text-align: center;height: 20px; line-height: 20px;position: relative;top: -1px;}
+        .red-blod {color: red;font-weight: bold}
+        .num-buton {padding:0 2px;background-color: #F0F0F0;border: 1px solid ghostwhite }
+
+        /*d底部*/
+        #cart-footer{margin-top: 20px;height: 50px; line-height: 50px;background-color: #EAEAEA;font-size: 18px;color: #666666;border: 1px solid gainsboro}
+        #chose-all {margin-left: 20px;}
+        #footer-del {border: none;background-color: #EAEAEA;}
+        #footer-del a { font-size: 18px;color: #666666;padding: 0 30px;text-decoration: none;}
+        #footer-del a:hover{color: red;}
+        #submit {font-size: 18px;height: 50px;border: none; border-left: 1px solid gainsboro;padding: 0 30px;}
+        #footer-price {margin: 0 20px;}
+        #total-num {margin: 0 2px;}
+        #total-price {margin: 0 2px;}
+
+        /*已选商品*/
+        #selected-item {padding:30px;border: 1px solid grey;background-color: white;}
+        #selected-item li {list-style: none; margin-right: 20px;position: relative;border: 1px solid grey;}
+        .selected-img {width: 100px;height: 100px;}
+        #selected-item .cancel {font-size:10px; color:white;background-color: gray;opacity: 0.6;padding: 2px 4px; position: absolute;top:0;right: 0;}
+    </style>
+</head>
+<body>
+<h2>地狗购物车</h2>
+    <div id="cart-content">
+        <div id="cart-header">
+            <ul class="clearfix">
+                <li class="col-1"><input type="checkbox"/>全选</li>
+                <li class="col-3">商品</li>
+                <li class="col-2">单价</li>
+                <li class="col-1">数量</li>
+                <li class="col-2">小计</li>
+                <li class="col-1 last-li">操作</li>
+            </ul>
+        </div>
+        <div class="item">
+            <ul  class="clearfix">
+                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-3">
+                    <div>
+                        <img class="item-img" src="images/1.jpg" alt="1"/>
+                        <p class="item-name">Casio/卡西欧 EX-TR350</p>
+                    </div>
+                </li>
+                <li class="col-2">5999.88</li>
+                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
+                <li class="col-2 red-blod">5999.88</li>
+                <li class="col-1 last-li">删除</li>
+            </ul>
+        </div>
+        <div class="item">
+            <ul  class="clearfix">
+                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-3">
+                    <div>
+                        <img class="item-img" src="images/2.jpg" alt="2"/>
+                        <p class="item-name">Canon/佳能 PowerShot SX50 HS</p>
+                    </div>
+                </li>
+                <li class="col-2">5999.88</li>
+                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
+                <li class="col-2 red-blod">5999.88</li>
+                <li class="col-1 last-li">删除</li>
+            </ul>
+        </div>
+        <div class="item">
+            <ul  class="clearfix">
+                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-3">
+                    <div>
+                        <img class="item-img" src="images/3.jpg" alt="3"/>
+                        <p class="item-name">Sony/索尼 DSC-WX300</p>
+                    </div>
+                </li>
+                <li class="col-2">5999.88</li>
+                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
+                <li class="col-2 red-blod">5999.88</li>
+                <li class="col-1 last-li">删除</li>
+            </ul>
+        </div>
+        <div class="item">
+            <ul  class="clearfix">
+                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-3">
+                    <div>
+                        <img class="item-img" src="images/4.jpg" alt="4"/>
+                        <p class="item-name">Fujifilm/富士 instax mini 25</p>
+                    </div>
+                </li>
+                <li class="col-2">5999.88</li>
+                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
+                <li class="col-2 red-blod">5999.88</li>
+                <li class="col-1 last-li">删除</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cart-footer" class="clearfix">
+        <div class="fl"><input id="chose-all" type="checkbox"/> 全选</div>
+        <div class="fl"><button id="footer-del"><a href="#">删除</a></button></div>
+        <div class="fr"><input id="submit" type="button" value="结算"/></div>
+        <div class="fr" id="footer-price">合计：¥<span id="total-price"class="red-blod">0</span></div>
+        <div class="fr" id="footer-num">已选商品<span id="total-num" class="red-blod">0</span>件
+            <span>︽</span><span>︾</span>
+        </div>
+    </div>
+    
+    <div id="selected-item">
+        <ul class="clearfix">
+            <li class="fl"><img class="selected-img" src="images/1.jpg" alt="1"/><div class="cancel">取消选择</div></li>
+            <li class="fl"><img class="selected-img" src="images/2.jpg" alt="2"/><div class="cancel">取消选择</div></li>
+            <li class="fl"><img class="selected-img" src="images/3.jpg" alt="3"/><div class="cancel">取消选择</div></li>
+            <li class="fl"><img class="selected-img" src="images/4.jpg" alt="4"/><div class="cancel">取消选择</div></li>
+        </ul>
+    </div>
+</body>
+</html>
