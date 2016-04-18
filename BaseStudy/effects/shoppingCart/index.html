@@ -5,7 +5,7 @@
     <title>购物车</title>
     <style>
         * {padding: 0;margin: 0}
-        body{width: 960px;margin: 0 auto;padding-bottom: 50px;}
+        body{width: 960px;margin: 0 auto;padding-bottom: 50px;font-size: 12px;}
         .clearfix:after {content: " ";display: block; height: 0;clear: both;visibility: hidden}
         .fl{float: left}
         .fr{float: right}
@@ -16,6 +16,7 @@
         /*表格样式*/
         #cart-content {border-top: 3px solid #A7CBFF; text-align: center}
         #cart-header {background-color:#E2F2FF;font-size: 18px;}
+        #cart-header li{height: 30px;line-height: 30px;}
         #cart-content li{border-bottom: 1px solid #A7CBFF; border-left: 1px solid #A7CBFF;
                       list-style: none;float: left;}
         #cart-content li.last-li {border-right: 1px solid #A7CBFF;}
@@ -43,6 +44,8 @@
         #selected-item li {list-style: none; margin-right: 20px;position: relative;border: 1px solid grey;}
         .selected-img {width: 100px;height: 100px;}
         #selected-item .cancel {font-size:10px; color:white;background-color: gray;opacity: 0.6;padding: 2px 4px; position: absolute;top:0;right: 0;}
+        .hide {display: none;}
+        .show {display: block;}
     </style>
 </head>
 <body>
@@ -50,7 +53,7 @@
     <div id="cart-content">
         <div id="cart-header">
             <ul class="clearfix">
-                <li class="col-1"><input type="checkbox"/>全选</li>
+                <li class="col-1"><input type="checkbox" class="check check-all"/>&nbsp;全选</li>
                 <li class="col-3">商品</li>
                 <li class="col-2">单价</li>
                 <li class="col-1">数量</li>
@@ -59,84 +62,109 @@
             </ul>
         </div>
         <div class="item">
+            <input type="text" value="1001" style="display:none;"><!--商品id-->
             <ul  class="clearfix">
-                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-1"><input type="checkbox" class="check"/></li>
                 <li class="col-3">
                     <div>
                         <img class="item-img" src="images/1.jpg" alt="1"/>
                         <p class="item-name">Casio/卡西欧 EX-TR350</p>
                     </div>
                 </li>
-                <li class="col-2">5999.88</li>
-                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
-                <li class="col-2 red-blod">5999.88</li>
-                <li class="col-1 last-li">删除</li>
+                <li class="col-2 unit-price">5999.88</li>
+                <li class="col-1">
+                    <div class="item-num">
+                        <span class="num-buton decrease">-</span>
+                        <input class="num-input" type="text" value="1" size="5"/>
+                        <span class="num-buton increase">+</span>
+                    </div>
+                </li>
+                <li class="col-2 red-blod subtotal">5999.88</li>
+                <li class="col-1 last-li delete">删除</li>
             </ul>
         </div>
         <div class="item">
+            <input type="text" value="1002" style="display:none;"><!--商品id-->
             <ul  class="clearfix">
-                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-1"><input type="checkbox" class="check"/></li>
                 <li class="col-3">
                     <div>
                         <img class="item-img" src="images/2.jpg" alt="2"/>
                         <p class="item-name">Canon/佳能 PowerShot SX50 HS</p>
                     </div>
                 </li>
-                <li class="col-2">5999.88</li>
-                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
-                <li class="col-2 red-blod">5999.88</li>
-                <li class="col-1 last-li">删除</li>
+                <li class="col-2 unit-price">4999</li>
+                <li class="col-1">                    
+                    <div class="item-num">
+                        <span class="num-buton decrease">-</span>
+                        <input class="num-input" type="text" value="1" size="5"/>
+                        <span class="num-buton increase">+</span>
+                    </div>
+                </li>
+                <li class="col-2 red-blod subtotal">4999</li>
+                <li class="col-1 last-li delete">删除</li>
             </ul>
         </div>
         <div class="item">
+            <input type="text" value="1003" style="display:none;"><!--商品id-->
             <ul  class="clearfix">
-                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-1"><input type="checkbox" class="check"/></li>
                 <li class="col-3">
                     <div>
                         <img class="item-img" src="images/3.jpg" alt="3"/>
                         <p class="item-name">Sony/索尼 DSC-WX300</p>
                     </div>
                 </li>
-                <li class="col-2">5999.88</li>
-                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
-                <li class="col-2 red-blod">5999.88</li>
-                <li class="col-1 last-li">删除</li>
+                <li class="col-2 unit-price">3888</li>
+                <li class="col-1">                    
+                    <div class="item-num">
+                        <span class="num-buton decrease">-</span>
+                        <input class="num-input" type="text" value="1" size="5"/>
+                        <span class="num-buton increase">+</span>
+                    </div>
+                </li>
+                <li class="col-2 red-blod subtotal">3888</li>
+                <li class="col-1 last-li delete">删除</li>
             </ul>
         </div>
         <div class="item">
+            <input type="text" value="1004" style="display:none;"><!--商品id-->
             <ul  class="clearfix">
-                <li class="col-1"><input type="checkbox"/></li>
+                <li class="col-1"><input type="checkbox" class="check"/></li>
                 <li class="col-3">
                     <div>
                         <img class="item-img" src="images/4.jpg" alt="4"/>
                         <p class="item-name">Fujifilm/富士 instax mini 25</p>
                     </div>
                 </li>
-                <li class="col-2">5999.88</li>
-                <li class="col-1"><div class="item-num"><span class="num-buton">-</span><input class="num-input" type="text" value="1" size="5"/><span class="num-buton">+</span></div></li>
-                <li class="col-2 red-blod">5999.88</li>
-                <li class="col-1 last-li">删除</li>
+                <li class="col-2 unit-price">3435</li>
+                <li class="col-1">                    
+                    <div class="item-num">
+                        <span class="num-buton decrease">-</span>
+                        <input class="num-input" type="text" value="1" size="5"/>
+                        <span class="num-buton increase">+</span>
+                    </div>
+                </li>
+                <li class="col-2 red-blod subtotal">3435</li>
+                <li class="col-1 last-li delete">删除</li>
             </ul>
         </div>
     </div>
 
     <div id="cart-footer" class="clearfix">
-        <div class="fl"><input id="chose-all" type="checkbox"/> 全选</div>
+        <div class="fl"><input type="checkbox" class="check check-all"/>&nbsp;全选</div>
         <div class="fl"><button id="footer-del"><a href="#">删除</a></button></div>
         <div class="fr"><input id="submit" type="button" value="结算"/></div>
-        <div class="fr" id="footer-price">合计：¥<span id="total-price"class="red-blod">0</span></div>
-        <div class="fr" id="footer-num">已选商品<span id="total-num" class="red-blod">0</span>件
-            <span>︽</span><span>︾</span>
+        <div class="fr">&nbsp;合计：¥<span id="total-price"class="red-blod">0</span></div>
+        <div class="fr">已选商品<span id="total-num" class="red-blod">0</span>件
+            <span id="selected-toggle">︽</span>
         </div>
     </div>
     
-    <div id="selected-item">
+    <div id="selected-item" class='hide'>
         <ul class="clearfix">
-            <li class="fl"><img class="selected-img" src="images/1.jpg" alt="1"/><div class="cancel">取消选择</div></li>
-            <li class="fl"><img class="selected-img" src="images/2.jpg" alt="2"/><div class="cancel">取消选择</div></li>
-            <li class="fl"><img class="selected-img" src="images/3.jpg" alt="3"/><div class="cancel">取消选择</div></li>
-            <li class="fl"><img class="selected-img" src="images/4.jpg" alt="4"/><div class="cancel">取消选择</div></li>
         </ul>
     </div>
 </body>
+<script type="text/javascript" src="cart.js"></script>
 </html>
