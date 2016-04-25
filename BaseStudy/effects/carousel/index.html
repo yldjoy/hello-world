@@ -11,6 +11,12 @@
 		<span class="poster-btn poster-prev-btn"></span>
 		<span class="poster-btn poster-next-btn"></span>
 	</div>
+
+		<div class="poster" data-pos-setting='{}'>
+		<ul class="poster-list"></ul>
+		<span class="poster-btn poster-prev-btn"></span>
+		<span class="poster-btn poster-next-btn"></span>
+	</div>
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/juicer.js"></script>
@@ -47,7 +53,7 @@
 	}
 	function initPoster(){
 		$('.poster').each(function(){
-			$(this).attr('data-pos-setting', JSON.stringify({'delay': 2000, 'speed': 1000}));
+			$(this).attr('data-pos-setting', JSON.stringify({'delay': 5000, 'speed': 1000, 'verticalAlign': 'bottom'}));
 			Carousel.init($(this));
 		});
 
