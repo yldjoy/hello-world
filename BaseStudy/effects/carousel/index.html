@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>旋转木马特效yldjoy</title>
+    <link type="text/css" rel="stylesheet" href="css/carousel.css">
+</head>
+<body>
+	<div class="poster" data-pos-setting='{}'>
+		<ul class="poster-list"></ul>
+		<span class="poster-btn poster-prev-btn"></span>
+		<span class="poster-btn poster-next-btn"></span>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/juicer.js"></script>
+<script id="poster-item-tpl" type="text/template">
+		{@each list as item,index}
+		<li class="poster-item">
+			<a href="#">
+				<img src='${item.href}' alt='${item.alt}' style="width:100%;height:100%">
+			</a>
+		</li>
+		{@/each}
+</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		domPoster();
+		initPoster();
+	});
+	function domPoster(){
+		var posterList = {
+					list: [{href: 'images/1.jpg', alt: '1'},
+						   {href: 'images/2.jpg', alt: '2'},
+						   {href: 'images/3.jpg', alt: '3'},
+						   {href: 'images/4.jpg', alt: '4'},
+						   {href: 'images/5.jpg', alt: '5'},
+						   {href: 'images/6.jpg', alt: '6'},
+						   {href: 'images/1.jpg', alt: '7'},
+						   {href: 'images/2.jpg', alt: '8'},
+						   {href: 'images/3.jpg', alt: '9'}]};
+		var tpl = $('#poster-item-tpl').html();
+		var posterHtml = juicer(tpl, posterList);
+		$('.poster-list').html(posterHtml);
+	}
+	function initPoster(){
+		$('.poster').each(function(){
+			$(this).attr('data-pos-setting', JSON.stringify({'delay': 2000, 'speed': 1000}));
+			Carousel.init($(this));
+		});
+
+	}
+</script>
+</html>
