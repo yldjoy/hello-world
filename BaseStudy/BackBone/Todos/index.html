@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Backbone.js Todos</title>
-  <link rel="stylesheet" href="css/todos.css"/>
+  <link rel="stylesheet" href="static/todos.css"/>
 </head>
 
 <body>
@@ -32,19 +32,19 @@
   </div>
 
 
-  <script src="js/json2.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/underscore.js"></script>
-  <script src="js/backbone.js"></script>
-  <script src="js/backbone.localStorage.js"></script>
-  <script src="js/todos.js"></script>
+  <script src="static/json2.js"></script>
+  <script src="static/jquery.js"></script>
+  <script src="static/underscore.js"></script>
+  <script src="static/backbone.js"></script>
+  <script src="static/backbone.localStorage.js"></script>
+  <script src="static/todos.js"></script>
 
   <!-- Templates -->
   <script type="text/template" id="item-template">
      <div class="view">
        <input class="toggle" type="checkbox" <%= done? 'checked="checked"' : '' %> />
        <label><%- title %></label>
-       <a class="destory"></a>
+       <a class="destroy"></a>
      </div>
      <input type="text" class="edit" value="<%- title %>" />
   </script>

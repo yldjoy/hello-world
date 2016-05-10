@@ -1,10 +1,11 @@
 $(function(){
 
   var Todo = Backbone.Model.extend({
+    urlRoot: '/todo',
     defaults:{
       title : 'todo',
       done: false,
-      order: function(){return Todos.nextOrder()}
+      orderNo: function(){return Todos.nextOrder()}
     },
 
     toggle: function(){
@@ -13,11 +14,15 @@ $(function(){
   });
 
   var TodoList = Backbone.Collection.extend({
+    //python后台
+    url: '/todos/',
     model: Todo,
-    localStorage: new Backbone.LocalStorage("todos-backbone"),
+
+    //localStorage存储数据
+    //localStorage: new Backbone.LocalStorage("todos-backbone"),
     nextOrder: function(){
       if(!this.length) return 1;
-      return this.last().get('order') + 1;
+      return this.last().get('orderNo') + 1;
     },
     done: function(){
       return this.where({done: true})
@@ -34,7 +39,7 @@ $(function(){
     events : {
       'click .toggle' : 'toggleDone',
       'dblclick .view' : 'edit',
-      'click a.destory' : 'clear',
+      'click a.destroy' : 'clear',
       'blur .edit' : 'show',
       'keypress .edit' : 'update'
     },
