@@ -1,0 +1,14 @@
+* {margin: 0; padding: 0}
+ul {list-style: none}
+a {text-decoration: underline;}
+.clearfix:after {content: ' ';display: block;height: 0;clear: both;visibility: hidden;}
+.fl {float: left;}
+.fr {float: right;}
+
+#stu-manager {width: 720px;font-size: 12px;box-sizing: border-box;padding: 10px 0 0 10px;}
+.stu-col {display: inline-block;width: 19%;}
+#stu-header {border-bottom: 1px solid black; background-color: #eee;font-weight: bolder;padding: 2px 0;}
+.stu-row {border-bottom: 1px dotted black;padding: 2px 0;}
+.top-style {margin-top: 2px;}
+.goal .goal-span, .goal.edit .goal-input {display: block;}
+.goal .goal-input, .goal.edit .goal-span  {display: none;}

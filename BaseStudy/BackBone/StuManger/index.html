@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>学生管理系统Backbone</title>
+  <link rel="stylesheet" type="text/css" href="static/stuManager.css">
+</head>
+<body>
+  <div id="stu-manager">
+      <div id="stu-header">
+        <span class="stu-col">学号</span>
+        <span class="stu-col">姓名</span>
+        <span class="stu-col">性别</span>
+        <span class="stu-col">总分</span>
+        <span class="stu-col">操作</span>
+      </div>
+      <ul id="stu-list">
+      </ul>
+      <div id="stu-add">
+          <div class="clearfix top-style">
+            <div class="fl">学号:&nbsp<input id="stu-num" type="text" size="10"></div>
+            <div class="fr">性别:&nbsp<select id="sex"><option value="boy">男</option><option value="girl">女</option></select></div>
+          </div>
+          <div class="clearfix top-style">
+            <div class="fl">姓名:&nbsp<input id="name"type="text" size="10"></div>
+            <div class="fr">总分:&nbsp<input id="goal" size="10"></div>
+          </div>
+          <div class="top-style"><input id="add-btn" type="button" value="增加"></div>
+      </div>
+  </div>
+  <script type="text/template" id="stu-template">
+            <span class="stu-col"><%- stuNum %></span>
+            <span class="stu-col" contenteditable><%- name %></span>
+            <span class="stu-col"><%= sex == "boy" ? '男' : '女'%></span>
+            <span class="stu-col goal">
+              <span class="goal-span"><%- goal %></span><input class="goal-input" type="text" size="10" value="<%- goal%>">
+            </span>
+            <span class="stu-col"><a class="destory">删除</a></span>
+  </script>
+  <script src="static/jquery.js"></script>
+  <script src="static/underscore.js"></script>
+  <script src="static/backbone.js"></script>
+  <script src="static/backbone.localStorage.js"></script>
+  <script src="static/stuManager.js"></script>
+</body>
+</html>
