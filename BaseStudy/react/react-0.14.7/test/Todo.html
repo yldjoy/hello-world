@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>react Todo</title>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+	var TodoList = React.createClass({
+		render: function(){
+			var createItem = function(itemText){
+				return <li>{itemText}</li>
+			};
+			return <ul>{this.props.items.map(createItem)}</ul>
+		}
+	});
+	var TodoApp = React.createClass({
+		getInitialState: function(){
+			return {items: [], text: ''};
+		},
+		handlerSubmit: function(e){
+			e.preventDefault();
+			var todo = e.target.querySelector('#todo').value;
+			var newItems = this.state.items.concat(todo);
+			this.setState({items: newItems, text: ''});
+		},
+		inputTodo: function(e){
+			this.setState({text: e.target.value});
+		},
+		render: function(){
+			return (<div>
+					<h1>TODO</h1>
+					<TodoList items={this.state.items}/>
+					<form onSubmit={this.handlerSubmit}>
+						<input id="todo" type="text" onChange={this.inputTodo} value={this.state.text}/>
+						<button type="submit">{'Add #' + (this.state.items.length + 1) }</button>
+					</form>
+					</div>)
+		}
+	});
+	ReactDOM.render(<TodoApp />, document.getElementById('container'));
+</script>
+</body>
+</html>
