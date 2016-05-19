@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>深入理解react示例</title>
+	<link rel="stylesheet" type="text/css" href="../build/bootstrap.min.css">
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+</head>
+<body style="padding:20px">
+<div id="container"></div>
+<script type="text/babel">
+var SearchBar = React.createClass({
+	render: function(){
+		return (<div>
+					<input type="text" placeholder="Search..."/>
+					<input type="checkbox"/>
+			    </div>);
+	}
+});	
+var Product = React.createClass({
+	render: function(){
+		return (<div>
+                 <span style={this.props.product.stocked ? {color: 'black'} : {color: 'red'}}>{this.props.product.name}</span>
+                 <span>{this.props.product.price}</span>
+			    </div>);
+	}
+});
+var Category = React.createClass({
+	render: function(){
+		return (<div>{this.props.category}</div>);
+	}
+});
+var ProductList = React.createClass({
+	render: function(){
+		var rows = [];
+    	var lastCategory = null;
+    	this.props.products.map(function(product){
+    			if(product.category != lastCategory){
+    				rows.push(<Category category={product.category}/>);
+    				lastCategory = product.category
+    			}
+    			rows.push(<Product product={product}/>);
+		});
+		return (<div>
+					<div><span>Name</span><span>Price</span></div>
+					{rows}
+			    </div>);
+	}
+});
+var ProductApp = React.createClass({
+	render: function(){
+		return (<div>
+					<SearchBar />
+					<ProductList products={this.props.products}/>
+				</div>);
+	}
+});
+
+var PRODUCTS = [
+  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+];
+
+ReactDOM.render(
+  <ProductApp products={PRODUCTS} />,
+  document.getElementById('container')
+);
+</script>
+</body>
+</html>
