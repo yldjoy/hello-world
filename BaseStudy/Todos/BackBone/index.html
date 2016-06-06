@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js Todos</title>
+  <link rel="stylesheet" href="css/todos.css"/>
+</head>
+
+<body>
+
+  <div id="todoapp">
+    <header>
+      <h1>Todos</h1>
+      <input id="new-todo" type="text" placeholder="What needs to be done?">
+    </header>
+
+    <section id="main">
+      <input id="toggle-all" type="checkbox">
+      <label for="toggle-all">Mark all as complete</label>
+      <ul id="todo-list">
+      </ul>
+    </section>
+    <footer>
+    </footer>
+
+  </div>
+
+  <div id="instructions">
+    Double-click to edit a todo.
+  </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+<script type="text/javascript" src="js/backbone.localStorage.js"></script>
+<script type="text/template" id="todo-item">
+        <div class="view">
+            <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+            <label><%= todo%></label>
+            <a class="destroy">已完成</a>
+        </div>
+        <input type="text" class="edit" value="<%= todo%>" />
+</script>
+<script type="text/template" id="todos-state">
+      <a id="clear-completed">Clear <%= completed %> completed <%= completed > 1 ? "items" : "item" %></a>
+      <div class="todo-count"><b><%= remained%></b> <%= remained > 1 ? "items" : "item"%> left </div>
+</script>
+<script type="text/javascript" src="js/todos.js"></script>
+</html>
