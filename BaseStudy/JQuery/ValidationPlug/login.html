@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>JQuery Validation Plug</title>
+</head>
+<body>
+<form id="formTest">
+	<fieldset>
+		<legend>用户登录</legend>
+		<div>
+			<label for="username">用户名</label>
+			<input type="text" id="username" name="username">
+		</div>
+		<div>
+			<label for="pwd">密码</label>
+			<input type="password" id="pwd" name="pwd"/>
+		</div>
+		<button type="submit">登录</button>
+	</fieldset>
+</form>
+<script type="text/javascript" src="../jquery-1.12.4.js"></script>
+<script type="text/javascript" src="jquery.validate-1.13.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#formTest').validate({
+			debug: true,
+			rules: {
+				username: {
+					required: true,
+					rangelength: [2,6],
+					email: true
+				},
+				pwd: {
+					required: true,
+					minlength: 4,
+					maxlength: 10
+				}
+			},
+			messages: {
+				username: {
+					required: "用户名必填！",
+					rangelength: "用户名范围为2到6位！",
+					email: "用户名必须是邮箱！"
+				},
+				pwd: {
+					required: "密码必填！",
+					minlength: "密码最少4位！",
+					maxlength: "密码最多10位！"
+				}
+
+			}
+		});
+	});
+</script>
+</body>
+</html>
